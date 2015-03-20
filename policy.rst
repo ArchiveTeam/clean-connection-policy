@@ -68,12 +68,12 @@ Check for DNS query uniqueness
 
 The client should resolve the following domains:
 
-* twitter.com
-* facebook.com
-* youtube.com
-* microsoft.com
-* icanhas.cheezburger.com
-* archiveteam.org
+* ``twitter.com``
+* ``facebook.com``
+* ``youtube.com``
+* ``microsoft.com``
+* ``icanhas.cheezburger.com``
+* ``archiveteam.org``
 
 The result should be 6 unique IP addresses. If there are any common IP addresses or any fails to resolve, the connection is not clean.
 
@@ -83,14 +83,14 @@ Check for positive DNS failed resolutions
 
 The client should resolve the following domains:
 
-* {RANDOMCHARS}.com
-* www.{RANDOMCHARS}.com
-* invalid.{RANDOMCHARS}.com
-* www.yahoo.cmo (sic)
-* invalid.archiveteam.org
-* invalid.{RANDOMCHARS}.tracker.archiveteam.org
+* ``{RANDOMCHARS}.com``
+* ``www.{RANDOMCHARS}.com``
+* ``invalid.{RANDOMCHARS}.com``
+* ``www.yahoo.cmo`` (sic)
+* ``invalid.archiveteam.org``
+* ``invalid.{RANDOMCHARS}.tracker.archiveteam.org``
 
-Where `{RANDOMCHARS}` is a set of random characters.
+Where ``{RANDOMCHARS}`` is a set of random characters.
 
 The result should be 0 IP addresses, that is, all non-existent domains.
 
@@ -102,10 +102,10 @@ The client should fetch a page from a HTTP Header Echo service.
 
 There should not be the following fields in the header:
 
-* X-Forwarded-For
-* Forwarded-For
-* X-Real-IP
-* Real-IP
+* ``X-Forwarded-For``
+* ``Forwarded-For``
+* ``X-Real-IP``
+* ``Real-IP``
 
 
 Check for content integrity
