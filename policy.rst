@@ -98,19 +98,43 @@ The result should be 0 IP addresses, that is, all non-existent domains.
 Check for proxies
 +++++++++++++++++
 
-The client should fetch a page from a HTTP Header Echo service.
+A server should be available for echoing HTTP headers & IP address and check whether the IP address is a Tor exit node (Echo Service). The server should respond in a formatted document such as JSON.
 
-There should not be the following fields in the header:
+The client should fetch a page from the Echo Service and parse the echo response.
+
+There should not be the following fields in the header list of the echo response:
 
 * ``X-Forwarded-For``
 * ``Forwarded-For``
 * ``X-Real-IP``
 * ``Real-IP``
 
+The echo response should not say the IP address is a Tor exit node.
+
 
 Check for content integrity
 +++++++++++++++++++++++++++
 
-TODO
+A server should be running be running HTTP on port 80 and HTTPS on port 443. It should have the following resources available:
 
+* ``generate_404``
+* ``generate_204``
+* ``blank.html``
+* ``content.html``
+* ``ad.js``
+* ``ad.png``
+* ``banner.jpg``
+
+The client should
+
+* Request ``generate_404`` and receive a 404 status code with the content ``404 Not Found\n`` (SHA1 digest of ``TODO``)
+* Request ``generate_204`` and receive a 203 status code with no content.
+* Request ``blank.html`` and receive a 200 status code with no content.
+* Request ``noexist.html`` and receive a 404 status code.
+* Request ``content.html`` and receive a 200 status code with the content matching a SHA1 digest of ``TODO``
+* Request ``ad.js`` and receive a 200 status code with the content matching a SHA1 digest of ``TODO``
+* Request ``ad.png`` and receive a 200 status code with the content matching a SHA1 digest of ``TODO``
+* Request ``banner.jpg`` and receive a 200 status code with the content matching a SHA1 digest of ``TODO``
+* Request ``noexist_ad.png`` and receive a 404 status code.
+* Connect to HTTPS and check the certificate.
 
