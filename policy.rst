@@ -115,7 +115,7 @@ The echo response should not say the IP address is a Tor exit node.
 Check for content integrity
 +++++++++++++++++++++++++++
 
-A server should be running be running HTTP on port 80 and HTTPS on port 443. It should have the following resources available:
+A server should be running be running HTTP on port 80 & another non-default port and HTTPS on port 443. It should have the following resources available:
 
 * ``generate_404``
 * ``generate_204``
